@@ -1,0 +1,6 @@
+.vscode
+# Ignore all compiled JS files recursively
+**/*.js
+
+# Optionally ignore JS map files too
+**/*.js.map
