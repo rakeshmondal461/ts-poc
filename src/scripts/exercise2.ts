@@ -5,7 +5,7 @@ Create another interface Employee that extends Person, and adds employeeId and d
 Write a function getEmployeeSummary(emp: Employee): string that returns something like:
 Rakesh Mondal (ID: EMP123) works in Engineering at age 30.
 
-*/
+
 
 interface Person {
   firstName: string;
@@ -32,3 +32,24 @@ let newEmploye: Employee = {
 
 
 console.log(getEmployeeSummary(newEmploye));
+
+*/
+
+// ------------------ USE CASE OF UNION ------------------ //
+
+type Shape =
+  | { kind: "circle"; radius: number }
+  | { kind: "square"; side: number }
+  | { kind: "rectangle"; width: number; height: number };
+
+function calculateArea(shape: Shape): number {
+  if (shape.kind === "circle") {
+    return Math.PI * (shape.radius * shape.radius);
+  } else if (shape.kind === "rectangle") {
+    return shape.height * shape.width;
+  } else if (shape.kind === "square") {
+    return shape.side * shape.side;
+  } else {
+    return 0;
+  }
+}
