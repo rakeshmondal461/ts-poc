@@ -33,7 +33,7 @@ let newEmploye: Employee = {
 
 console.log(getEmployeeSummary(newEmploye));
 
-*/
+
 
 // ------------------ USE CASE OF UNION ------------------ //
 
@@ -53,3 +53,37 @@ function calculateArea(shape: Shape): number {
     return 0;
   }
 }
+
+// ------------------ USE CASE OF UNION ------------------ //
+
+
+// ------------------ USE CASE OF GENERIC FUNCTION ------------------ //
+
+// Mini Challenge 7 (Generics):
+// ✅ Task 1:
+// Create a generic function wrapInArray<T>(value: T): T[]
+// It should take any value and return it inside an array.
+
+function wrapInArray<T>(value: T): T[] {
+  return [value];
+}
+
+console.log(wrapInArray("hi")); // ["hi"]
+console.log(wrapInArray(10)); // [10]
+console.log(wrapInArray(true)); // [true]
+
+
+function getFirstElement<T>(arr: T[]): T | undefined {
+  if (Array.isArray(arr) && arr.length > 0) {
+    return arr[0];
+  }
+  return undefined;
+}
+
+console.log(getFirstElement([1, 2, 3]));
+console.log(getFirstElement(["a", "b", "c"]));
+console.log(getFirstElement([]));
+
+// ------------------ USE CASE OF GENERIC FUNCTION ------------------ //
+
+*/
