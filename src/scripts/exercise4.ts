@@ -104,4 +104,68 @@ function bulkConditionalUpdateUsers(
 }
 // ---------------- Partial Utility Types (Exercise 3) --------------------- //
 
+
+
+// ---------------- Pick Utility Types (Exercise 1) --------------------- //
+type UserProfile = {
+  name: string;
+  age: number;
+  email: string;
+  isAdmin: boolean;
+};
+
+const user: UserProfile = {
+  name: "Rakesh",
+  age: 29,
+  email: "rakesh@example.com",
+  isAdmin: false,
+};
+
+function getPublicProfile(user: Pick<UserProfile, "name" | "email">) {
+  const publicUser: Pick<UserProfile, "name" | "email"> = {
+    name: user.name,
+    email: user.email,
+  };
+  return publicUser;
+}
+
+const publicProfile = getPublicProfile(user);
+console.log("publicProfile", publicProfile);
+
+// ---------------- Pick Utility Types (Exercise 1) --------------------- //
+
 */
+
+// ---------------- Pick Utility Types (Exercise 2) --------------------- //
+
+type UserProfile = {
+  name: string;
+  age: number;
+  email: string;
+  address: string;
+  phone: string;
+};
+
+const user: UserProfile = {
+  name: "Rakesh",
+  age: 30,
+  email: "rakesh@example.com",
+  address: "123 Street, Bangalore",
+  phone: "123-456-7890",
+};
+
+function selectFields<T, K extends keyof T>(
+    obj: T,
+    keys: readonly K[]
+  ): Pick<T, K> {
+    const result = {} as Pick<T, K>;
+    keys.forEach((key) => {
+      result[key] = obj[key];
+    });
+    return result;
+  }
+
+const publicUser = selectFields(user, ["name", "email"]);
+console.log(publicUser);
+// Expected Output:
+// { name: "Rakesh", email: "rakesh@example.com" }
