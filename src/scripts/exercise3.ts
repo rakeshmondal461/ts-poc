@@ -138,7 +138,7 @@ console.log(port);
 console.log(debug);
 console.log(debug);
 
-*/
+
 
 // ------------------------- Updating a Property with Type Safety -------------------------- //
 
@@ -160,3 +160,4 @@ const config: Config = {
 
 const updated = updateConfig(config, "port", 8005);
 console.log(updated);
+*/
