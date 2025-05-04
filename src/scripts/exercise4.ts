@@ -134,7 +134,7 @@ console.log("publicProfile", publicProfile);
 
 // ---------------- Pick Utility Types (Exercise 1) --------------------- //
 
-*/
+
 
 // ---------------- Pick Utility Types (Exercise 2) --------------------- //
 
@@ -169,3 +169,5 @@ const publicUser = selectFields(user, ["name", "email"]);
 console.log(publicUser);
 // Expected Output:
 // { name: "Rakesh", email: "rakesh@example.com" }
+
+*/
